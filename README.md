@@ -242,7 +242,7 @@ Vagrant.configure("2") do |config|
     journalctl -b | grep "Jedi"
 ```
 
-> [!IMPORTANT]
+> [!NOTE]
 > К данной работе прилагаю также запись консоли. Для того, чтобы воспроизвести выполненные действия, 
 > необходимо скачать файлы [screenrecord-2024-07-30.script](screenrecord-2024-07-30.script) и [screenrecord-2024-07-30.time](screenrecord-2024-07-30.time), 
 > после чего выполнить в каталоге с загруженными файлами команду:
