@@ -1,0 +1,608 @@
+Script started on 2024-07-30 16:05:16+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="270" LINES="63"]
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> exit[Kvagrant up
+[0mBringing machine 'Debian12' up with 'libvirt' provider...[0m
+[1;33m==> Debian12: No version detected for /home/max/vagrant/images/debian12, using timestamp to watch for modifications. Consider
+==> Debian12: generating a local metadata for the box with a version to allow better handling.
+==> Debian12: See https://www.vagrantup.com/docs/boxes/format#box-metadata for further details.[0m
+[1m==> Debian12: Creating image (snapshot of base box volume).[0m
+[1m==> Debian12: Creating domain with the following settings...[0m
+[1m==> Debian12:  -- Name:              vg3_Debian12[0m
+[1m==> Debian12:  -- Title:             Debian12[0m
+[1m==> Debian12:  -- Description:       Виртуальная машина на базе дистрибутива Debian Linux[0m
+[1m==> Debian12:  -- Domain type:       kvm[0m
+[1m==> Debian12:  -- Cpus:              2[0m
+[1m==> Debian12:  -- Feature:           acpi[0m
+[1m==> Debian12:  -- Feature:           apic[0m
+[1m==> Debian12:  -- Feature:           pae[0m
+[1m==> Debian12:  -- Clock offset:      utc[0m
+[1m==> Debian12:  -- Memory:            2048M[0m
+[1m==> Debian12:  -- Management MAC:    52:54:00:27:28:83[0m
+[1m==> Debian12:  -- Loader:            [0m
+[1m==> Debian12:  -- Nvram:             [0m
+[1m==> Debian12:  -- Base box:          /home/max/vagrant/images/debian12[0m
+[1m==> Debian12:  -- Storage pool:      default[0m
+[1m==> Debian12:  -- Image(vda):        /home/max/libvirt/images/default/vg3_Debian12.img, virtio, 40G[0m
+[1m==> Debian12:  -- Disk driver opts:  cache='default'[0m
+[1m==> Debian12:  -- Kernel:            [0m
+[1m==> Debian12:  -- Initrd:            [0m
+[1m==> Debian12:  -- Graphics Type:     vnc[0m
+[1m==> Debian12:  -- Graphics Port:     -1[0m
+[1m==> Debian12:  -- Graphics IP:       127.0.0.1[0m
+[1m==> Debian12:  -- Graphics Password: Not defined[0m
+[1m==> Debian12:  -- Video Type:        cirrus[0m
+[1m==> Debian12:  -- Video VRAM:        16384[0m
+[1m==> Debian12:  -- Video 3D accel:    false[0m
+[1m==> Debian12:  -- Sound Type:        [0m
+[1m==> Debian12:  -- Keymap:            en-us[0m
+[1m==> Debian12:  -- TPM Backend:       passthrough[0m
+[1m==> Debian12:  -- TPM Path:          [0m
+[1m==> Debian12:  -- Disks:         vdb(qcow2, virtio, 1G)[0m
+[1m==> Debian12:  -- Disk(vdb):     /home/max/libvirt/images/default/vg3_Debian12-vdb.qcow2[0m
+[1m==> Debian12:  -- INPUT:             type=mouse, bus=ps2[0m
+[1m==> Debian12: Creating shared folders metadata...[0m
+[1m==> Debian12: Starting domain.[0m
+[1m==> Debian12: Waiting for domain to get an IP address...[0m
+[1m==> Debian12: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    Debian12: SSH address: 192.168.121.10:22[0m
+[0m    Debian12: SSH username: vagrant[0m
+[0m    Debian12: SSH auth method: private key[0m
+[0m    Debian12: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12: Warning: Host unreachable. Retrying...[0m
+[0m    Debian12: 
+    Debian12: Vagrant insecure key detected. Vagrant will automatically replace
+    Debian12: this with a newly generated keypair for better security.[0m
+[0m    Debian12: 
+    Debian12: Inserting generated public key within guest...[0m
+[0m    Debian12: Removing insecure key from the guest if it's present...[0m
+[0m    Debian12: Key inserted! Disconnecting and reconnecting using new SSH key...[0m
+[1m==> Debian12: Machine booted and ready![0m
+[1m==> Debian12: Running provisioner: shell...[0m
+[0m    Debian12: Running: inline script[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Изменим ttl для работы через раздающий телефон[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: net.ipv4.ip_default_ttl = 66[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создаём сервис watchlog, который будет искать запись "ALERT" в журнале /var/log/watchlog и записывать событие о найденой записи в системный журнал[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создаём файл с конфигурацией для сервиса в директории /etc/default[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /etc/default/watchlog[0m
+[0;32m    Debian12: # Configuration file for my watchlog service[0m
+[0;32m    Debian12: # Place it to /etc/default[0m
+[0;32m    Debian12: # File and word in that file that we will be monit[0m
+[0;32m    Debian12: WORD="ALERT"[0m
+[0;32m    Debian12: LOG=/var/log/watchlog.log[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создаём файл "журнала".[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /var/log/watchlog.log[0m
+[0;32m    Debian12: This is ALERT!!![0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создадим скрипт[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /opt/watchlog.sh[0m
+[0;32m    Debian12: #!/bin/bash[0m
+[0;32m    Debian12: WORD=$1[0m
+[0;32m    Debian12: LOG=$2[0m
+[0;32m    Debian12: DATE=`date`[0m
+[0;32m    Debian12: if grep $WORD $LOG &> /dev/null; then echo "$DATE: I found word, Jedi!" | logger; else exit 0; fi[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Добавим права на запуск файла[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: ls -l /opt/watchlog.sh[0m
+[0;32m    Debian12: -rwxr--r-- 1 root root 137 июл 30 16:06 /opt/watchlog.sh[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создадим юнит для сервиса[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /etc/systemd/system/watchlog.service[0m
+[0;32m    Debian12: [Unit][0m
+[0;32m    Debian12: Description=My watchlog service[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: [Service][0m
+[0;32m    Debian12: Type=oneshot[0m
+[0;32m    Debian12: EnvironmentFile=/etc/default/watchlog[0m
+[0;32m    Debian12: ExecStart=/opt/watchlog.sh $WORD $LOG[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создадим юнит для таймера[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /etc/systemd/system/watchlog.timer[0m
+[0;32m    Debian12: [Unit][0m
+[0;32m    Debian12: Description=Run watchlog script every 30 second[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: [Timer][0m
+[0;32m    Debian12: # Run every 30 second[0m
+[0;32m    Debian12: OnUnitActiveSec=30[0m
+[0;32m    Debian12: Unit=watchlog.service[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: [Install][0m
+[0;32m    Debian12: WantedBy=multi-user.target[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Запустим timer и service[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;31m    Debian12: Created symlink /etc/systemd/system/multi-user.target.wants/watchlog.timer → /etc/systemd/system/watchlog.timer.[0m
+[0;32m    Debian12: ○ watchlog.service - My watchlog service[0m
+[0;32m    Debian12:      Loaded: loaded (/etc/systemd/system/watchlog.service; static)[0m
+[0;32m    Debian12:      Active: inactive (dead) since Tue 2024-07-30 16:07:32 MSK; 34ms ago[0m
+[0;32m    Debian12: TriggeredBy: ● watchlog.timer[0m
+[0;32m    Debian12:     Process: 1416 ExecStart=/opt/watchlog.sh $WORD $LOG (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:    Main PID: 1416 (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:         CPU: 13ms[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: июл 30 16:07:32 debian12 systemd[1]: Starting watchlog.service - My watchlog service...[0m
+[0;32m    Debian12: июл 30 16:07:32 debian12 root[1420]: Вт 30 июл 2024 16:07:32 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:07:32 debian12 systemd[1]: watchlog.service: Deactivated successfully.[0m
+[0;32m    Debian12: июл 30 16:07:32 debian12 systemd[1]: Finished watchlog.service - My watchlog service.[0m
+[0;32m    Debian12: ● watchlog.timer - Run watchlog script every 30 second[0m
+[0;32m    Debian12:      Loaded: loaded (/etc/systemd/system/watchlog.timer; enabled; preset: enabled)[0m
+[0;32m    Debian12:      Active: active (waiting) since Tue 2024-07-30 16:07:32 MSK; 39ms ago[0m
+[0;32m    Debian12:     Trigger: Tue 2024-07-30 16:08:02 MSK; 29s left[0m
+[0;32m    Debian12:    Triggers: ● watchlog.service[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: июл 30 16:07:32 debian12 systemd[1]: Started watchlog.timer - Run watchlog script every 30 second.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создаём spawn-fcgi.sevice[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Установим пакеты spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: apt install -y spawn-fcgi php php-cgi php-cli apache2 libapache2-mod-fcgid[0m
+[0;31m    Debian12: [0m
+[0;31m    Debian12: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12: [0m
+[0;32m    Debian12: Чтение списков пакетов…[0m
+[0;32m    Debian12: Построение дерева зависимостей…[0m
+[0;32m    Debian12: Чтение информации о состоянии…[0m
+[0;32m    Debian12: Будут установлены следующие дополнительные пакеты:[0m
+[0;32m    Debian12:   apache2-data apache2-utils libapache2-mod-php8.2 php-common php8.2[0m
+[0;32m    Debian12:   php8.2-cgi php8.2-cli php8.2-common php8.2-opcache php8.2-readline[0m
+[0;32m    Debian12: Предлагаемые пакеты:[0m
+[0;32m    Debian12:   apache2-doc apache2-suexec-pristine | apache2-suexec-custom php-pear[0m
+[0;32m    Debian12: Следующие НОВЫЕ пакеты будут установлены:[0m
+[0;32m    Debian12:   apache2 apache2-data apache2-utils libapache2-mod-fcgid[0m
+[0;32m    Debian12:   libapache2-mod-php8.2 php php-cgi php-cli php-common php8.2 php8.2-cgi[0m
+[0;32m    Debian12:   php8.2-cli php8.2-common php8.2-opcache php8.2-readline spawn-fcgi[0m
+[0;32m    Debian12: Обновлено 0 пакетов, установлено 16 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.[0m
+[0;32m    Debian12: Необходимо скачать 6 876 kB архивов.[0m
+[0;32m    Debian12: После данной операции объём занятого дискового пространства возрастёт на 34,5 MB.[0m
+[0;32m    Debian12: Пол:1 http://deb.debian.org/debian bookworm/main amd64 apache2-data all 2.4.59-1~deb12u1 [160 kB][0m
+[0;32m    Debian12: Пол:2 http://deb.debian.org/debian bookworm/main amd64 apache2-utils amd64 2.4.59-1~deb12u1 [207 kB][0m
+[0;32m    Debian12: Пол:3 http://deb.debian.org/debian bookworm/main amd64 apache2 amd64 2.4.59-1~deb12u1 [220 kB][0m
+[0;32m    Debian12: Пол:4 http://deb.debian.org/debian bookworm/main amd64 libapache2-mod-fcgid amd64 1:2.3.9-4 [71,2 kB][0m
+[0;32m    Debian12: Пол:5 http://deb.debian.org/debian bookworm/main amd64 php-common all 2:93 [13,1 kB][0m
+[0;32m    Debian12: Пол:6 http://deb.debian.org/debian bookworm/main amd64 php8.2-common amd64 8.2.20-1~deb12u1 [680 kB][0m
+[0;32m    Debian12: Пол:7 http://deb.debian.org/debian bookworm/main amd64 php8.2-opcache amd64 8.2.20-1~deb12u1 [345 kB][0m
+[0;32m    Debian12: Пол:8 http://deb.debian.org/debian bookworm/main amd64 php8.2-readline amd64 8.2.20-1~deb12u1 [12,4 kB][0m
+[0;32m    Debian12: Пол:9 http://deb.debian.org/debian bookworm/main amd64 php8.2-cli amd64 8.2.20-1~deb12u1 [1 735 kB][0m
+[0;32m    Debian12: Пол:10 http://deb.debian.org/debian bookworm/main amd64 libapache2-mod-php8.2 amd64 8.2.20-1~deb12u1 [1 674 kB][0m
+[0;32m    Debian12: Пол:11 http://deb.debian.org/debian bookworm/main amd64 php8.2-cgi amd64 8.2.20-1~deb12u1 [1 691 kB][0m
+[0;32m    Debian12: Пол:12 http://deb.debian.org/debian bookworm/main amd64 php8.2 all 8.2.20-1~deb12u1 [39,2 kB][0m
+[0;32m    Debian12: Пол:13 http://deb.debian.org/debian bookworm/main amd64 php all 2:8.2+93 [3 628 B][0m
+[0;32m    Debian12: Пол:14 http://deb.debian.org/debian bookworm/main amd64 php-cgi all 2:8.2+93 [4 164 B][0m
+[0;32m    Debian12: Пол:15 http://deb.debian.org/debian bookworm/main amd64 php-cli all 2:8.2+93 [4 108 B][0m
+[0;32m    Debian12: Пол:16 http://deb.debian.org/debian bookworm/main amd64 spawn-fcgi amd64 1.6.4-2 [14,8 kB][0m
+[0;31m    Debian12: dpkg-preconfigure: не удалось заново открыть stdin: No such file or directory[0m
+[0;32m    Debian12: Получено 6 876 kB за 3с (2 206 kB/s)[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета apache2-data.[0m
+[0;32m    Debian12: (Чтение базы данных … (Чтение базы данных … 5%(Чтение базы данных … 10%(Чтение базы данных … 15%(Чтение базы данных … 20%(Чтение базы данных … 25%(Чтение базы данных … 30%(Чтение базы данных … 35%(Чтение базы данных … 40%(Чтение базы данных … 45%(Чтение базы данных … 50%(Чтение базы данных … 55%(Чтение базы данных … 60%(Чтение базы данных … 65%(Чтение базы данных … 70%(Чтение базы данных … 75%(Чтение базы данных … 80%(Чтение базы данных … 85%(Чтение базы данных … 90%(Чтение базы данных … 95%(Чтение базы данных … 100%(Чтение базы данных … на данный момент установлено 179592 файла и каталога.)[0m
+[0;32m    Debian12: Подготовка к распаковке …/00-apache2-data_2.4.59-1~deb12u1_all.deb …[0m
+[0;32m    Debian12: Распаковывается apache2-data (2.4.59-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета apache2-utils.[0m
+[0;32m    Debian12: Подготовка к распаковке …/01-apache2-utils_2.4.59-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается apache2-utils (2.4.59-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета apache2.[0m
+[0;32m    Debian12: Подготовка к распаковке …/02-apache2_2.4.59-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается apache2 (2.4.59-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета libapache2-mod-fcgid.[0m
+[0;32m    Debian12: Подготовка к распаковке …/03-libapache2-mod-fcgid_1%3a2.3.9-4_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается libapache2-mod-fcgid (1:2.3.9-4) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php-common.[0m
+[0;32m    Debian12: Подготовка к распаковке …/04-php-common_2%3a93_all.deb …[0m
+[0;32m    Debian12: Распаковывается php-common (2:93) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php8.2-common.[0m
+[0;32m    Debian12: Подготовка к распаковке …/05-php8.2-common_8.2.20-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается php8.2-common (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php8.2-opcache.[0m
+[0;32m    Debian12: Подготовка к распаковке …/06-php8.2-opcache_8.2.20-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается php8.2-opcache (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php8.2-readline.[0m
+[0;32m    Debian12: Подготовка к распаковке …/07-php8.2-readline_8.2.20-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается php8.2-readline (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php8.2-cli.[0m
+[0;32m    Debian12: Подготовка к распаковке …/08-php8.2-cli_8.2.20-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается php8.2-cli (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета libapache2-mod-php8.2.[0m
+[0;32m    Debian12: Подготовка к распаковке …/09-libapache2-mod-php8.2_8.2.20-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается libapache2-mod-php8.2 (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php8.2-cgi.[0m
+[0;32m    Debian12: Подготовка к распаковке …/10-php8.2-cgi_8.2.20-1~deb12u1_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается php8.2-cgi (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php8.2.[0m
+[0;32m    Debian12: Подготовка к распаковке …/11-php8.2_8.2.20-1~deb12u1_all.deb …[0m
+[0;32m    Debian12: Распаковывается php8.2 (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php.[0m
+[0;32m    Debian12: Подготовка к распаковке …/12-php_2%3a8.2+93_all.deb …[0m
+[0;32m    Debian12: Распаковывается php (2:8.2+93) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php-cgi.[0m
+[0;32m    Debian12: Подготовка к распаковке …/13-php-cgi_2%3a8.2+93_all.deb …[0m
+[0;32m    Debian12: Распаковывается php-cgi (2:8.2+93) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета php-cli.[0m
+[0;32m    Debian12: Подготовка к распаковке …/14-php-cli_2%3a8.2+93_all.deb …[0m
+[0;32m    Debian12: Распаковывается php-cli (2:8.2+93) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета spawn-fcgi.[0m
+[0;32m    Debian12: Подготовка к распаковке …/15-spawn-fcgi_1.6.4-2_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается spawn-fcgi (1.6.4-2) …[0m
+[0;32m    Debian12: Настраивается пакет php-common (2:93) …[0m
+[0;32m    Debian12: Created symlink /etc/systemd/system/timers.target.wants/phpsessionclean.timer → /lib/systemd/system/phpsessionclean.timer.[0m
+[0;32m    Debian12: Настраивается пакет php8.2-common (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/calendar.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/ctype.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/exif.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/fileinfo.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/ffi.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/ftp.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/gettext.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/iconv.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/pdo.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/phar.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/posix.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/shmop.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/sockets.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/sysvmsg.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/sysvsem.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/sysvshm.ini with new version[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/tokenizer.ini with new version[0m
+[0;32m    Debian12: Настраивается пакет libapache2-mod-fcgid (1:2.3.9-4) …[0m
+[0;32m    Debian12: Package apache2 is not configured yet. Will defer actions by package libapache2-mod-fcgid.[0m
+[0;32m    Debian12: Настраивается пакет php8.2-opcache (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/opcache.ini with new version[0m
+[0;32m    Debian12: Настраивается пакет php8.2-readline (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/mods-available/readline.ini with new version[0m
+[0;32m    Debian12: Настраивается пакет apache2-data (2.4.59-1~deb12u1) …[0m
+[0;32m    Debian12: Настраивается пакет spawn-fcgi (1.6.4-2) …[0m
+[0;32m    Debian12: Настраивается пакет php8.2-cli (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/php8.2 для предоставления /usr/bin/php (php) в автоматическом режиме[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/phar8.2 для предоставления /usr/bin/phar (phar) в автоматическом режиме[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/phar.phar8.2 для предоставления /usr/bin/phar.phar (phar.phar) в автоматическом режиме[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/cli/php.ini with new version[0m
+[0;32m    Debian12: Настраивается пакет apache2-utils (2.4.59-1~deb12u1) …[0m
+[0;32m    Debian12: Настраивается пакет apache2 (2.4.59-1~deb12u1) …[0m
+[0;32m    Debian12: Enabling module mpm_event.[0m
+[0;32m    Debian12: Enabling module authz_core.[0m
+[0;32m    Debian12: Enabling module authz_host.[0m
+[0;32m    Debian12: Enabling module authn_core.[0m
+[0;32m    Debian12: Enabling module auth_basic.[0m
+[0;32m    Debian12: Enabling module access_compat.[0m
+[0;32m    Debian12: Enabling module authn_file.[0m
+[0;32m    Debian12: Enabling module authz_user.[0m
+[0;32m    Debian12: Enabling module alias.[0m
+[0;32m    Debian12: Enabling module dir.[0m
+[0;32m    Debian12: Enabling module autoindex.[0m
+[0;32m    Debian12: Enabling module env.[0m
+[0;32m    Debian12: Enabling module mime.[0m
+[0;32m    Debian12: Enabling module negotiation.[0m
+[0;32m    Debian12: Enabling module setenvif.[0m
+[0;32m    Debian12: Enabling module filter.[0m
+[0;32m    Debian12: Enabling module deflate.[0m
+[0;32m    Debian12: Enabling module status.[0m
+[0;32m    Debian12: Enabling module reqtimeout.[0m
+[0;32m    Debian12: Enabling conf charset.[0m
+[0;32m    Debian12: Enabling conf localized-error-pages.[0m
+[0;32m    Debian12: Enabling conf other-vhosts-access-log.[0m
+[0;32m    Debian12: Enabling conf security.[0m
+[0;32m    Debian12: Enabling conf serve-cgi-bin.[0m
+[0;32m    Debian12: Enabling site 000-default.[0m
+[0;32m    Debian12: info: Executing deferred 'a2enmod fcgid' for package libapache2-mod-fcgid[0m
+[0;32m    Debian12: Enabling module fcgid.[0m
+[0;32m    Debian12: Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /lib/systemd/system/apache2.service.[0m
+[0;32m    Debian12: Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /lib/systemd/system/apache-htcacheclean.service.[0m
+[0;32m    Debian12: Настраивается пакет libapache2-mod-php8.2 (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/apache2/php.ini with new version[0m
+[0;32m    Debian12: Module mpm_event disabled.[0m
+[0;32m    Debian12: Enabling module mpm_prefork.[0m
+[0;32m    Debian12: apache2_switch_mpm Switch to prefork[0m
+[0;32m    Debian12: apache2_invoke: Enable module php8.2[0m
+[0;32m    Debian12: Настраивается пакет php-cli (2:8.2+93) …[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/php.default для предоставления /usr/bin/php (php) в автоматическом режиме[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/phar.default для предоставления /usr/bin/phar (phar) в автоматическом режиме[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/phar.phar.default для предоставления /usr/bin/phar.phar (phar.phar) в автоматическом режиме[0m
+[0;32m    Debian12: Настраивается пакет php8.2-cgi (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/php-cgi8.2 для предоставления /usr/bin/php-cgi (php-cgi) в автоматическом режиме[0m
+[0;32m    Debian12: update-alternatives: используется /usr/lib/cgi-bin/php8.2 для предоставления /usr/lib/cgi-bin/php (php-cgi-bin) в автоматическом режиме[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: Creating config file /etc/php/8.2/cgi/php.ini with new version[0m
+[0;32m    Debian12: Настраивается пакет php-cgi (2:8.2+93) …[0m
+[0;32m    Debian12: update-alternatives: используется /usr/bin/php-cgi.default для предоставления /usr/bin/php-cgi (php-cgi) в автоматическом режиме[0m
+[0;32m    Debian12: update-alternatives: используется /usr/lib/cgi-bin/php.default для предоставления /usr/lib/cgi-bin/php (php-cgi-bin) в автоматическом режиме[0m
+[0;32m    Debian12: Настраивается пакет php8.2 (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Настраивается пакет php (2:8.2+93) …[0m
+[0;32m    Debian12: Обрабатываются триггеры для man-db (2.11.2-2) …[0m
+[0;32m    Debian12: Обрабатываются триггеры для php8.2-cli (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Обрабатываются триггеры для libapache2-mod-php8.2 (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: Обрабатываются триггеры для php8.2-cgi (8.2.20-1~deb12u1) …[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создадим файл конфигурации для spawn-fcgi[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /etc/spawn-fcgi/fcgi.conf[0m
+[0;32m    Debian12: # You must set some working options before the "spawn-fcgi" service will work.[0m
+[0;32m    Debian12: # If SOCKET points to a file, then this file is cleaned up by the init script.[0m
+[0;32m    Debian12: #[0m
+[0;32m    Debian12: # See spawn-fcgi(1) for all possible options.[0m
+[0;32m    Debian12: #[0m
+[0;32m    Debian12: # Example :[0m
+[0;32m    Debian12: SOCKET=/var/run/php-fcgi.sock[0m
+[0;32m    Debian12: OPTIONS="-u www-data -g www-data -s $SOCKET -S -M 0600 -C 32 -F 1 -- /usr/bin/php-cgi"[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Создадим unit для spawn-fcgi.service[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /etc/systemd/system/spawn-fcgi.service[0m
+[0;32m    Debian12: [Unit][0m
+[0;32m    Debian12: Description=Spawn-fcgi startup service by Otus[0m
+[0;32m    Debian12: After=network.target[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: [Service][0m
+[0;32m    Debian12: Type=simple[0m
+[0;32m    Debian12: PIDFile=/var/run/spawn-fcgi.pid[0m
+[0;32m    Debian12: EnvironmentFile=/etc/spawn-fcgi/fcgi.conf[0m
+[0;32m    Debian12: ExecStart=/usr/bin/spawn-fcgi -n $OPTIONS[0m
+[0;32m    Debian12: KillMode=process[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: [Install][0m
+[0;32m    Debian12: WantedBy=multi-user.target[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Разрешим и запустим сервис spawn-fcgi[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;31m    Debian12: Created symlink /etc/systemd/system/multi-user.target.wants/spawn-fcgi.service → /etc/systemd/system/spawn-fcgi.service.[0m
+[0;32m    Debian12: systemctl status spawn-fcgi[0m
+[0;32m    Debian12: ● spawn-fcgi.service - Spawn-fcgi startup service by Otus[0m
+[0;32m    Debian12:      Loaded: loaded (/etc/systemd/system/spawn-fcgi.service; enabled; preset: enabled)[0m
+[0;32m    Debian12:      Active: active (running) since Tue 2024-07-30 16:09:22 MSK; 35ms ago[0m
+[0;32m    Debian12:    Main PID: 10158 (php-cgi)[0m
+[0;32m    Debian12:       Tasks: 1 (limit: 2281)[0m
+[0;32m    Debian12:      Memory: 4.9M[0m
+[0;32m    Debian12:         CPU: 26ms[0m
+[0;32m    Debian12:      CGroup: /system.slice/spawn-fcgi.service[0m
+[0;32m    Debian12:              └─10158 /usr/bin/php-cgi[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: июл 30 16:09:22 debian12 systemd[1]: Started spawn-fcgi.service - Spawn-fcgi startup service by Otus.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Запускаем два экземпляра nginx[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Установим nginx[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: apt install -y nginx[0m
+[0;31m    Debian12: [0m
+[0;31m    Debian12: WARNING: apt does not have a stable CLI interface. Use with caution in scripts.[0m
+[0;31m    Debian12: [0m
+[0;32m    Debian12: Чтение списков пакетов…[0m
+[0;32m    Debian12: Построение дерева зависимостей…[0m
+[0;32m    Debian12: Чтение информации о состоянии…[0m
+[0;32m    Debian12: Будут установлены следующие дополнительные пакеты:[0m
+[0;32m    Debian12:   nginx-common[0m
+[0;32m    Debian12: Предлагаемые пакеты:[0m
+[0;32m    Debian12:   fcgiwrap nginx-doc[0m
+[0;32m    Debian12: Следующие НОВЫЕ пакеты будут установлены:[0m
+[0;32m    Debian12:   nginx nginx-common[0m
+[0;32m    Debian12: Обновлено 0 пакетов, установлено 2 новых пакетов, для удаления отмечено 0 пакетов, и 0 пакетов не обновлено.[0m
+[0;32m    Debian12: Необходимо скачать 640 kB архивов.[0m
+[0;32m    Debian12: После данной операции объём занятого дискового пространства возрастёт на 1 696 kB.[0m
+[0;32m    Debian12: Пол:1 http://deb.debian.org/debian bookworm/main amd64 nginx-common all 1.22.1-9 [112 kB][0m
+[0;32m    Debian12: Пол:2 http://deb.debian.org/debian bookworm/main amd64 nginx amd64 1.22.1-9 [527 kB][0m
+[0;31m    Debian12: dpkg-preconfigure: не удалось заново открыть stdin: No such file or directory[0m
+[0;32m    Debian12: Получено 640 kB за 1с (802 kB/s)[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета nginx-common.[0m
+[0;32m    Debian12: (Чтение базы данных … (Чтение базы данных … 5%(Чтение базы данных … 10%(Чтение базы данных … 15%(Чтение базы данных … 20%(Чтение базы данных … 25%(Чтение базы данных … 30%(Чтение базы данных … 35%(Чтение базы данных … 40%(Чтение базы данных … 45%(Чтение базы данных … 50%(Чтение базы данных … 55%(Чтение базы данных … 60%(Чтение базы данных … 65%(Чтение базы данных … 70%(Чтение базы данных … 75%(Чтение базы данных … 80%(Чтение базы данных … 85%(Чтение базы данных … 90%(Чтение базы данных … 95%(Чтение базы данных … 100%(Чтение базы данных … на данный момент установлено 180315 файлов и каталогов.)[0m
+[0;32m    Debian12: Подготовка к распаковке …/nginx-common_1.22.1-9_all.deb …[0m
+[0;32m    Debian12: Распаковывается nginx-common (1.22.1-9) …[0m
+[0;32m    Debian12: Выбор ранее не выбранного пакета nginx.[0m
+[0;32m    Debian12: Подготовка к распаковке …/nginx_1.22.1-9_amd64.deb …[0m
+[0;32m    Debian12: Распаковывается nginx (1.22.1-9) …[0m
+[0;32m    Debian12: Настраивается пакет nginx-common (1.22.1-9) …[0m
+[0;32m    Debian12: Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /lib/systemd/system/nginx.service.[0m
+[0;32m    Debian12: Could not execute systemctl:  at /usr/bin/deb-systemd-invoke line 145.[0m
+[0;32m    Debian12: Настраивается пакет nginx (1.22.1-9) …[0m
+[0;32m    Debian12: Not attempting to start NGINX, port 80 is already in use.[0m
+[0;32m    Debian12: Обрабатываются триггеры для man-db (2.11.2-2) …[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Копируем файл сервиса nginx и редактируем полученную копию: /lib/systemd/system/nginx@.service[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: cat /lib/systemd/system/nginx@.service[0m
+[0;32m    Debian12: # Stop dance for nginx[0m
+[0;32m    Debian12: # =======================[0m
+[0;32m    Debian12: #[0m
+[0;32m    Debian12: # ExecStop sends SIGQUIT (graceful stop) to the nginx process.[0m
+[0;32m    Debian12: # If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control[0m
+[0;32m    Debian12: # and sends SIGTERM (fast shutdown) to the main process.[0m
+[0;32m    Debian12: # After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends[0m
+[0;32m    Debian12: # SIGKILL to all the remaining processes in the process group (KillMode=mixed).[0m
+[0;32m    Debian12: #[0m
+[0;32m    Debian12: # nginx signals reference doc:[0m
+[0;32m    Debian12: # http://nginx.org/en/docs/control.html[0m
+[0;32m    Debian12: #[0m
+[0;32m    Debian12: [Unit][0m
+[0;32m    Debian12: Description=A high performance web server and a reverse proxy server[0m
+[0;32m    Debian12: Documentation=man:nginx(8)[0m
+[0;32m    Debian12: After=network-online.target remote-fs.target nss-lookup.target[0m
+[0;32m    Debian12: Wants=network-online.target[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: [Service][0m
+[0;32m    Debian12: Type=forking[0m
+[0;32m    Debian12: PIDFile=/run/nginx-%I.pid[0m
+[0;32m    Debian12: ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx-%I.conf -q -g 'daemon on; master_process on;'[0m
+[0;32m    Debian12: ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx-%I.conf -g 'daemon on; master_process on;'[0m
+[0;32m    Debian12: ExecReload=/usr/sbin/nginx -c /etc/nginx/nginx-%I.conf -g 'daemon on; master_process on;' -s reload[0m
+[0;32m    Debian12: ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx-%I.pid[0m
+[0;32m    Debian12: TimeoutStopSec=5[0m
+[0;32m    Debian12: KillMode=mixed[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: [Install][0m
+[0;32m    Debian12: WantedBy=multi-user.target[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Копируем файл настроек nginx в две копии - nginx-first.conf и nginx-second.conf. Редактируем полученные копии.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Мы изменили путь к pid-файлу, порты, на которых работают копии экземпляра nginx, а также убрали ссылки на файл сайта по умолчанию.[0m
+[0;32m    Debian12: cat /etc/nginx/nginx-first.conf | grep ".pid"[0m
+[0;32m    Debian12: pid /run/nginx-first.pid;[0m
+[0;32m    Debian12: cat /etc/nginx/nginx-second.conf | grep ".pid"[0m
+[0;32m    Debian12: pid /run/nginx-second.pid;[0m
+[0;32m    Debian12: cat /etc/nginx/nginx-first.conf | grep "listen"[0m
+[0;32m    Debian12: http { server { listen 8081; }[0m
+[0;32m    Debian12: #		listen     localhost:110;[0m
+[0;32m    Debian12: #		listen     localhost:143;[0m
+[0;32m    Debian12: cat /etc/nginx/nginx-second.conf | grep "listen"[0m
+[0;32m    Debian12: http { server { listen 8082; }[0m
+[0;32m    Debian12: #		listen     localhost:110;[0m
+[0;32m    Debian12: #		listen     localhost:143;[0m
+[0;32m    Debian12: cat /etc/nginx/nginx-first.conf | grep "sites-en"[0m
+[0;32m    Debian12: 	#include /etc/nginx/sites-enabled/*;[0m
+[0;32m    Debian12: cat /etc/nginx/nginx-second.conf | grep "sites-en"[0m
+[0;32m    Debian12: 	#include /etc/nginx/sites-enabled/*;[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Разрешим и запустим сервисы nginx@[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;31m    Debian12: Created symlink /etc/systemd/system/multi-user.target.wants/nginx@first.service → /lib/systemd/system/nginx@.service.[0m
+[0;31m    Debian12: Created symlink /etc/systemd/system/multi-user.target.wants/nginx@second.service → /lib/systemd/system/nginx@.service.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Убедимся, что наши экземпляры nginx "слушают" нужные порты (8081 и 8082)[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess[0m
+[0;32m    Debian12: LISTEN 0      128        127.0.0.1:631       0.0.0.0:*    users:(("cupsd",pid=689,fd=7))[0m
+[0;32m    Debian12: LISTEN 0      128          0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=629,fd=3))[0m
+[0;32m    Debian12: LISTEN 0      511          0.0.0.0:8081      0.0.0.0:*    users:(("nginx",pid=10451,fd=5),("nginx",pid=10450,fd=5),("nginx",pid=10448,fd=5))[0m
+[0;32m    Debian12: LISTEN 0      511          0.0.0.0:8082      0.0.0.0:*    users:(("nginx",pid=10457,fd=5),("nginx",pid=10456,fd=5),("nginx",pid=10454,fd=5))[0m
+[0;32m    Debian12: LISTEN 0      128            [::1]:631          [::]:*    users:(("cupsd",pid=689,fd=6))[0m
+[0;32m    Debian12: LISTEN 0      128             [::]:22           [::]:*    users:(("sshd",pid=629,fd=4))[0m
+[0;32m    Debian12: LISTEN 0      511                *:80              *:*    users:(("apache2",pid=9283,fd=4),("apache2",pid=9282,fd=4),("apache2",pid=9281,fd=4),("apache2",pid=9280,fd=4),("apache2",pid=9279,fd=4),("apache2",pid=9278,fd=4),("apache2",pid=9276,fd=4))[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Проверяем статус первого экземпляра nginx[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: systemctl status nginx@first.service[0m
+[0;32m    Debian12: ● nginx@first.service - A high performance web server and a reverse proxy server[0m
+[0;32m    Debian12:      Loaded: loaded (/lib/systemd/system/nginx@.service; enabled; preset: enabled)[0m
+[0;32m    Debian12:      Active: active (running) since Tue 2024-07-30 16:11:43 MSK; 25s ago[0m
+[0;32m    Debian12:        Docs: man:nginx(8)[0m
+[0;32m    Debian12:     Process: 10445 ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx-first.conf -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:     Process: 10447 ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx-first.conf -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:    Main PID: 10448 (nginx)[0m
+[0;32m    Debian12:       Tasks: 3 (limit: 2281)[0m
+[0;32m    Debian12:      Memory: 2.3M[0m
+[0;32m    Debian12:         CPU: 23ms[0m
+[0;32m    Debian12:      CGroup: /system.slice/system-nginx.slice/nginx@first.service[0m
+[0;32m    Debian12:              ├─10448 "nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-first.conf -g daemon on; master_process on;"[0m
+[0;32m    Debian12:              ├─10450 "nginx: worker process"[0m
+[0;32m    Debian12:              └─10451 "nginx: worker process"[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: июл 30 16:11:43 debian12 systemd[1]: Starting nginx@first.service - A high performance web server and a reverse proxy server...[0m
+[0;32m    Debian12: июл 30 16:11:43 debian12 systemd[1]: Started nginx@first.service - A high performance web server and a reverse proxy server.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Проверяем статус второго экземпляра nginx[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: systemctl status nginx@second.service[0m
+[0;32m    Debian12: ● nginx@second.service - A high performance web server and a reverse proxy server[0m
+[0;32m    Debian12:      Loaded: loaded (/lib/systemd/system/nginx@.service; enabled; preset: enabled)[0m
+[0;32m    Debian12:      Active: active (running) since Tue 2024-07-30 16:11:43 MSK; 45s ago[0m
+[0;32m    Debian12:        Docs: man:nginx(8)[0m
+[0;32m    Debian12:     Process: 10452 ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx-second.conf -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:     Process: 10453 ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx-second.conf -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:    Main PID: 10454 (nginx)[0m
+[0;32m    Debian12:       Tasks: 3 (limit: 2281)[0m
+[0;32m    Debian12:      Memory: 2.3M[0m
+[0;32m    Debian12:         CPU: 23ms[0m
+[0;32m    Debian12:      CGroup: /system.slice/system-nginx.slice/nginx@second.service[0m
+[0;32m    Debian12:              ├─10454 "nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx-second.conf -g daemon on; master_process on;"[0m
+[0;32m    Debian12:              ├─10456 "nginx: worker process"[0m
+[0;32m    Debian12:              └─10457 "nginx: worker process"[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: июл 30 16:11:43 debian12 systemd[1]: Starting nginx@second.service - A high performance web server and a reverse proxy server...[0m
+[0;32m    Debian12: июл 30 16:11:43 debian12 systemd[1]: Started nginx@second.service - A high performance web server and a reverse proxy server.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: Так как apache занимает порт 80/tcp, то изменим порт по умолчанию для основного экземпляра nginx на 8080. Для этого отредактируем файл /etc/nginx/sites-enabled/default[0m
+[0;32m    Debian12: После этого запустим его и проверим прослушиваемые порты на хосте, а также статус nginx.service[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: sed -i s/listen 80 /listen 8080 / /etc/nginx/sites-enabled/default[0m
+[0;32m    Debian12: sed -i s/listen [/#listen [/ /etc/nginx/sites-enabled/default[0m
+[0;32m    Debian12: cat /etc/nginx/sites-enabled/default | grep "listen"[0m
+[0;32m    Debian12: 	listen 8080 default_server;[0m
+[0;32m    Debian12: 	#listen [::]:80 default_server;[0m
+[0;32m    Debian12: 	# listen 443 ssl default_server;[0m
+[0;32m    Debian12: 	# #listen [::]:443 ssl default_server;[0m
+[0;32m    Debian12: #	listen 80;[0m
+[0;32m    Debian12: #	#listen [::]:80;[0m
+[0;32m    Debian12: ss -ntlp[0m
+[0;32m    Debian12: State  Recv-Q Send-Q Local Address:Port Peer Address:PortProcess[0m
+[0;32m    Debian12: LISTEN 0      128        127.0.0.1:631       0.0.0.0:*    users:(("cupsd",pid=689,fd=7))[0m
+[0;32m    Debian12: LISTEN 0      128          0.0.0.0:22        0.0.0.0:*    users:(("sshd",pid=629,fd=3))[0m
+[0;32m    Debian12: LISTEN 0      511          0.0.0.0:8080      0.0.0.0:*    users:(("nginx",pid=10495,fd=5),("nginx",pid=10494,fd=5),("nginx",pid=10493,fd=5))[0m
+[0;32m    Debian12: LISTEN 0      511          0.0.0.0:8081      0.0.0.0:*    users:(("nginx",pid=10451,fd=5),("nginx",pid=10450,fd=5),("nginx",pid=10448,fd=5))[0m
+[0;32m    Debian12: LISTEN 0      511          0.0.0.0:8082      0.0.0.0:*    users:(("nginx",pid=10457,fd=5),("nginx",pid=10456,fd=5),("nginx",pid=10454,fd=5))[0m
+[0;32m    Debian12: LISTEN 0      128            [::1]:631          [::]:*    users:(("cupsd",pid=689,fd=6))[0m
+[0;32m    Debian12: LISTEN 0      128             [::]:22           [::]:*    users:(("sshd",pid=629,fd=4))[0m
+[0;32m    Debian12: LISTEN 0      511                *:80              *:*    users:(("apache2",pid=9283,fd=4),("apache2",pid=9282,fd=4),("apache2",pid=9281,fd=4),("apache2",pid=9280,fd=4),("apache2",pid=9279,fd=4),("apache2",pid=9278,fd=4),("apache2",pid=9276,fd=4))[0m
+[0;32m    Debian12: systemctl status nginx.service[0m
+[0;32m    Debian12: ● nginx.service - A high performance web server and a reverse proxy server[0m
+[0;32m    Debian12:      Loaded: loaded (/lib/systemd/system/nginx.service; enabled; preset: enabled)[0m
+[0;32m    Debian12:      Active: active (running) since Tue 2024-07-30 16:13:13 MSK; 20s ago[0m
+[0;32m    Debian12:        Docs: man:nginx(8)[0m
+[0;32m    Debian12:     Process: 10491 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:     Process: 10492 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[0m
+[0;32m    Debian12:    Main PID: 10493 (nginx)[0m
+[0;32m    Debian12:       Tasks: 3 (limit: 2281)[0m
+[0;32m    Debian12:      Memory: 2.3M[0m
+[0;32m    Debian12:         CPU: 26ms[0m
+[0;32m    Debian12:      CGroup: /system.slice/nginx.service[0m
+[0;32m    Debian12:              ├─10493 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"[0m
+[0;32m    Debian12:              ├─10494 "nginx: worker process"[0m
+[0;32m    Debian12:              └─10495 "nginx: worker process"[0m
+[0;32m    Debian12: [0m
+[0;32m    Debian12: июл 30 16:13:13 debian12 systemd[1]: Starting nginx.service - A high performance web server and a reverse proxy server...[0m
+[0;32m    Debian12: июл 30 16:13:13 debian12 systemd[1]: Started nginx.service - A high performance web server and a reverse proxy server.[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: В задании "Сервис для мониторинга журнала", чтение лог-файла происходит каждые 30 сек. Проверим, что нужные записи попали в системный журнал[0m
+[0;32m    Debian12: *************************************************************[0m
+[0;32m    Debian12: journalctl -b | grep "Jedi"[0m
+[0;32m    Debian12: июл 30 16:07:32 debian12 root[1420]: Вт 30 июл 2024 16:07:32 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:08:11 debian12 root[1437]: Вт 30 июл 2024 16:08:11 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:08:41 debian12 root[8333]: Вт 30 июл 2024 16:08:41 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:09:21 debian12 root[10127]: Вт 30 июл 2024 16:09:21 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:09:51 debian12 root[10270]: Вт 30 июл 2024 16:09:51 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:10:43 debian12 root[10375]: Вт 30 июл 2024 16:10:43 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:11:41 debian12 root[10397]: Вт 30 июл 2024 16:11:41 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:12:28 debian12 root[10475]: Вт 30 июл 2024 16:12:28 MSK: I found word, Jedi![0m
+[0;32m    Debian12: июл 30 16:13:11 debian12 root[10489]: Вт 30 июл 2024 16:13:11 MSK: I found word, Jedi![0m
+7]2;max@localhost.localdomain:~/vagrant/vg3]1;localhost.localdomain8max@localhost:~/vagrant/vg3> exit
+exit
+
+Script done on 2024-07-30 16:14:03+03:00 [COMMAND_EXIT_CODE="0"]
